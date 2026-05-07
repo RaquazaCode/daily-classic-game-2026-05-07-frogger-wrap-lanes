@@ -1,0 +1,21 @@
+{
+  "mode": "title",
+  "score": 0,
+  "bestScore": 0,
+  "round": 1,
+  "wrapsUsed": 0,
+  "laneShiftCount": 0,
+  "elapsedMs": 0,
+  "frog": {
+    "row": 9,
+    "col": 5
+  },
+  "filledHomes": [],
+  "targetHomeColumn": 7,
+  "crashReason": null,
+  "recentEvents": [
+    "Press Space or Enter to start.",
+    "Use arrows or WASD. P pauses. R resets.",
+    "Wrap off the left or right edge for a tunnel bonus."
+  ]
+}

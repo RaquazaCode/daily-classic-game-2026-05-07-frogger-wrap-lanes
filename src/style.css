@@ -1,8 +1,13 @@
 :root {
   color-scheme: dark;
-  font-family: "Trebuchet MS", "Verdana", sans-serif;
-  background: #102118;
+  font-family: "Avenir Next", "Trebuchet MS", sans-serif;
+  background: #09130f;
   color: #f4f3df;
+  --panel-bg: rgba(8, 20, 15, 0.82);
+  --panel-border: rgba(244, 243, 223, 0.12);
+  --panel-shadow: 0 22px 80px rgba(0, 0, 0, 0.34);
+  --accent: #9ee37d;
+  --muted: rgba(244, 243, 223, 0.72);
 }
 
 * {
@@ -12,41 +17,214 @@
 body {
   margin: 0;
   min-height: 100vh;
-  display: grid;
-  place-items: center;
   background:
-    radial-gradient(circle at top, rgba(148, 214, 125, 0.16), transparent 40%),
-    linear-gradient(180deg, #173528 0%, #102118 100%);
+    radial-gradient(circle at top, rgba(158, 227, 125, 0.16), transparent 34%),
+    linear-gradient(180deg, #102118 0%, #09130f 100%);
 }
 
-.shell {
-  width: min(720px, calc(100vw - 2rem));
-  padding: 3rem;
-  border: 1px solid rgba(244, 243, 223, 0.14);
-  border-radius: 24px;
-  background: rgba(8, 20, 15, 0.82);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+button,
+pre,
+code,
+input {
+  font: inherit;
+}
+
+.page-shell {
+  width: min(1460px, calc(100vw - 2rem));
+  margin: 0 auto;
+  padding: 1.2rem 0 2rem;
+}
+
+.hero-panel {
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.hero-copy,
+.stage-panel,
+.panel {
+  border: 1px solid var(--panel-border);
+  border-radius: 28px;
+  background: var(--panel-bg);
+  box-shadow: var(--panel-shadow);
+  backdrop-filter: blur(18px);
+}
+
+.hero-copy {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .eyebrow {
   margin: 0 0 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.24em;
-  font-size: 0.74rem;
-  color: #9ecf7b;
+  font-size: 0.72rem;
+  color: var(--accent);
+}
+
+h1,
+h2,
+p,
+dl {
+  margin: 0;
 }
 
 h1 {
-  margin: 0;
-  font-size: clamp(2.4rem, 6vw, 4rem);
-  line-height: 0.96;
+  font-family: "Avenir Next Condensed", "Trebuchet MS", sans-serif;
+  font-size: clamp(2.6rem, 5vw, 4.3rem);
+  line-height: 0.92;
+  text-transform: uppercase;
 }
 
-.copy {
+.lede {
+  margin-top: 1rem;
+  line-height: 1.68;
+  color: var(--muted);
+  max-width: 28ch;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.3rem;
+}
+
+.pill {
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(158, 227, 125, 0.14);
+  border: 1px solid rgba(158, 227, 125, 0.2);
+  color: #dfffc9;
+  font-size: 0.92rem;
+}
+
+.stage-panel {
+  padding: 1rem;
+  overflow: hidden;
+}
+
+#game-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0e1a16;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.panel {
+  padding: 1.15rem;
+}
+
+.panel-wide {
+  grid-column: 1 / -1;
+}
+
+h2 {
+  font-family: "Avenir Next Condensed", "Trebuchet MS", sans-serif;
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1.2rem;
+  margin-top: 1rem;
+}
+
+.stat-grid dt {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(244, 243, 223, 0.55);
+}
+
+.stat-grid dd {
+  margin-top: 0.22rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+button {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 0.8rem 0.9rem;
+  background: linear-gradient(180deg, rgba(158, 227, 125, 0.16), rgba(158, 227, 125, 0.06));
+  color: #f4f3df;
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(158, 227, 125, 0.34);
+  background: linear-gradient(180deg, rgba(158, 227, 125, 0.22), rgba(158, 227, 125, 0.08));
+}
+
+.panel-note {
+  margin-top: 1rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+pre {
+  margin-top: 1rem;
+  padding: 1rem;
+  max-height: 290px;
+  overflow: auto;
+  border-radius: 18px;
+  background: rgba(3, 8, 6, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: "SFMono-Regular", "Menlo", "Monaco", monospace;
+  font-size: 0.87rem;
+  line-height: 1.45;
+}
+
+.event-feed {
   margin: 1rem 0 0;
-  max-width: 52ch;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: rgba(244, 243, 223, 0.82);
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.65rem;
+  color: var(--muted);
+}
+
+.event-feed li {
+  line-height: 1.5;
+}
+
+@media (max-width: 1060px) {
+  .hero-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-wide {
+    grid-column: auto;
+  }
 }
 

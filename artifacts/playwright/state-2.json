@@ -1,0 +1,27 @@
+{
+  "mode": "running",
+  "score": 261,
+  "bestScore": 261,
+  "round": 1,
+  "wrapsUsed": 1,
+  "laneShiftCount": 21,
+  "elapsedMs": 2360,
+  "frog": {
+    "row": 6,
+    "col": 1
+  },
+  "filledHomes": [
+    7
+  ],
+  "targetHomeColumn": 1,
+  "crashReason": null,
+  "recentEvents": [
+    "Forward progress +10.",
+    "Forward progress +10.",
+    "Home 7 secured +116.",
+    "Frog banked at column 7.",
+    "Forward progress +10.",
+    "Forward progress +10.",
+    "Forward progress +10."
+  ]
+}

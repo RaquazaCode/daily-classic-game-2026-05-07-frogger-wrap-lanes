@@ -1,6 +1,5 @@
 # Implementation Plan
 
-1. Build deterministic Frogger core with wrap-around lane behavior and browser hooks.
-2. Add UI, controls, autoplay verification path, and Playwright capture artifacts.
-3. Publish via GitHub feature branch + PR merge, then run deploy/report/state updates.
-
+1. Build a deterministic Frogger engine with wrap tunnels, looping traffic/support lanes, scoring, pause, reset, and the required browser hooks.
+2. Drive both manual play and autoplay from that single engine so tests, self-check output, and Playwright captures all agree.
+3. Ship a cabinet-style UI, capture GIFs plus JSON proof artifacts, then publish through the required `main` + `codex/*` GitHub flow before updating automation records.
